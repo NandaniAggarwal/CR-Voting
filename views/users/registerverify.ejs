@@ -1,0 +1,21 @@
+<% layout('layout/boilerplate') %>
+<main class="container mt-5" style="background-color: #BDDDFC;">
+    <section class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card" style="background-color: #6A89A7; color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <div class="card-body">
+            <h2 class="text-center mb-4">REGISTER!</h2>
+            <form action="/register" method="POST">
+              <div class="mb-3">
+                <label class="form-label" for="otp">Enter otp sent to your email</label>
+                <input class="form-control" type="text" name="otp" id="otp" placeholder="Enter OTP" required>
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+</main>
+<br><br>
+

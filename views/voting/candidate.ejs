@@ -1,0 +1,38 @@
+<% layout('layout/boilerplate2') %>
+<h1 style="text-align: center; color: aliceblue; font-weight: bold; margin-bottom: 30px;">WANT TO BE A CANDIDATE ?</h1>
+<h3 style="text-align: center; color: rgb(217, 235, 188); margin-bottom: 30px;">Kindly fill the following form</h3>
+<section class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card" style="background-color: #6A89A7; color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <div class="card-body">
+          <form action="/candidate" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label class="form-label" for="name">YOUR NAME</label>
+              <input class="form-control" type="text" name="name" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">ENTER YOUR DESCRIPTION</label>
+                <textarea class="form-control" name="description" id="description" placeholder="Enter your description" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="whyq">WHY SHOULD WE MAKE YOU CR OF THE CLASS?</label>
+                <textarea class="form-control" name="whyq" id="whyq" placeholder="What are opportunities you would provide to the class" required></textarea>
+            </div>
+            <div class="mb-3">
+                <p>Upload Your Picture:</p>
+                <div class="form-file custom-file">
+                    <input type="file" class="form-file-input" id="image" name="image" multiple>
+                    <label class="form-file-label" for="image">
+                        <span class="form-file-text custom-file-label">Choose image(s)...</span>
+                        <span class="form-file-button">Browse</span>
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3">
+              <button class="btn btn-success w-100">SUBMIT</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

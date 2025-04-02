@@ -1,0 +1,108 @@
+<% layout('layout/boilerplate') %>
+<main class="container mt-5" style="background-color: #BDDDFC;">
+    <section class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card" style="background-color: #6A89A7; color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+          <div class="card-body">
+            <h2 class="text-center mb-4">REGISTER!</h2>
+            <form action="/register" method="POST">
+              <div class="mb-3">
+                <label class="form-label" for="username">USER NAME</label>
+                <input class="form-control" type="text" name="username" id="username" placeholder="Enter username" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="password">PASSWORD</label>
+                <input class="form-control" type="password" name="password" id="password" placeholder="Enter password" required>
+              </div>
+
+
+              <div class="mb-3"><label class="form-label" for="email">EMAIL</label>
+                <input class="form-control" type="email" name="email" id="email" placeholder="Enter email" required>
+              </div>
+<!--
+              <div class="mb-3">
+                <button class="btn btn-success">Send OTP</button>
+              </div>
+
+                <div class="otpverification">
+                    <div class="mb-3">
+                        <label class="form-label" for="otpverify">OTP</label>
+                        <input class="form-control" name="otpverify" id="otpverify" placeholder="Enter OTP to verify" required>
+                    </div>
+                </div>
+-->
+
+                <div class="mb-3">
+                  <button type="button" class="btn btn-info" id="sendOtpBtn">Send OTP</button>
+              </div>
+
+              <div id="otpSection" style="display: none;">
+                  <div class="mb-3">
+                      <label for="otp" class="form-label">Enter OTP</label>
+                      <input type="text" class="form-control" id="otp" required>
+                  </div>
+                  <div>
+                  <button type="button" class="btn btn-info" id="verifyOtpBtn">Verify OTP</button>
+                  <br><br>
+                </div>
+              </div>
+
+              <input type="hidden" name="otpVerified" id="otpVerified" value="false">
+
+              
+              <div class="mb-3">
+                <button class="btn btn-success w-100">SUBMIT</button>
+              </div>
+            </form>
+            <p>Already have an account? <a href="/login" style="color: pink;">Login</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+</main>
+<br><br>
+
+
+<script>
+  document.getElementById("sendOtpBtn").addEventListener("click", async () => {
+      const email = document.getElementById("email").value;
+      if (!email) {
+          alert("Enter an email first.");
+          return;
+      }
+      
+      const response = await fetch("/send-otp", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+          alert(result.message);
+          document.getElementById("otpSection").style.display = "block";
+      } else {
+          alert("Failed to send OTP.");
+      }
+  });
+
+  document.getElementById("verifyOtpBtn").addEventListener("click", async () => {
+      const email = document.getElementById("email").value;
+      const otp = document.getElementById("otp").value;
+
+      const response = await fetch("/verify-otp", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, otp }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+          alert(result.message);
+          document.getElementById("otpVerified").value = "true";
+      } else {
+          alert("Invalid OTP.");
+      }
+  });
+</script>

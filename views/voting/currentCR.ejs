@@ -1,4 +1,4 @@
-<% layout('layout/boilerplate2') %>
+<!--<% layout('layout/boilerplate2') %>
 <h1 style="text-align: center; color: aliceblue;">CURRENT CR'S </h1>
 <div class="card-container" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 10px; margin-bottom: 15px;">
 <div class="card" style="width: 100%">
@@ -34,4 +34,79 @@
     <p class="card-text">ndbjfgruoehfoie</p>
   </div>
 </div>
+</div>
+-->
+<% layout('layout/boilerplate2') %>
+<style>
+    h1 {
+        text-align: center;
+        color: #ffffff; /* Changed to white for better contrast */
+        margin-bottom: 30px;
+    }
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+        gap: 20px; /* Increased gap for better spacing */
+        margin-bottom: 30px;
+    }
+    .card {
+        border: none; /* Remove default border */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        transition: transform 0.2s; /* Smooth hover effect */
+    }
+    .card:hover {
+        transform: scale(1.05); /* Scale effect on hover */
+    }
+    .card-img-top {
+        border-top-left-radius: 10px; /* Rounded corners for image */
+        border-top-right-radius: 10px; /* Rounded corners for image */
+    }
+    .card-body {
+        background-color: #f8f9fa; /* Light background for card body */
+        border-radius: 0 0 10px 10px; /* Rounded corners for card body */
+    }
+    .card-text {
+        margin: 5px 0; /* Consistent margin for text */
+    }
+    .bold-text {
+        font-weight: bold; /* Class for bold text */
+    }
+</style>
+
+<h1>CURRENT CR'S</h1>
+<div class="card-container">
+    <div class="card">
+        <img src="https://avatars.githubusercontent.com/u/21073753?v=4" class="card-img-top" alt="Muskaan's Avatar">
+        <div class="card-body">
+            <p class="card-text bold-text">Name:</p>
+            <p class="card-text">Muskaan</p>
+            <p class="card-text bold-text">Description:</p>
+            <p class="card-text">nwlk2hd</p>
+            <p class="card-text bold-text">Opportunities that would be provided are:</p>
+            <p class="card-text">w2dvjh</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://avatars.githubusercontent.com/u/21073753?v=4" class="card-img-top" alt="Medha Holla's Avatar">
+        <div class="card-body">
+            <p class="card-text bold-text">Name:</p>
+            <p class="card-text">Medha Holla</p>
+            <p class="card-text bold-text">Description:</p>
+            <p class="card-text">mdgwvgirlw</p>
+            <p class="card-text bold-text">Opportunities that would be provided are:</p>
+            <p class="card-text">rehuwgdcuehivoer</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://avatars.githubusercontent.com/u/21073753?v=4" class="card-img-top" alt="Jiya Arora's Avatar">
+        <div class="card-body">
+            <p class="card-text bold-text">Name:</p>
+            <p class="card-text">Jiya Arora</p>
+            <p class="card-text bold-text">Description:</p>
+            <p class="card-text">whfguiwqgfoqiuwfh</p>
+            <p class="card-text bold-text">Opportunities that would be provided are:</p>
+            <p class="card-text">ndbjfgruoehfoie</p>
+        </div>
+    </div>
 </div>

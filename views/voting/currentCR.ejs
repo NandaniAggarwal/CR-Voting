@@ -3,37 +3,57 @@
 <style>
     h1 {
         text-align: center;
-        color: #000000; /* Changed to white for better contrast */
-        margin-bottom: 30px;
+        color: #000;
+        margin: 40px 0 30px;
+        font-family: 'Poppins', sans-serif;
     }
+
     .card-container {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
-        gap: 20px; /* Increased gap for better spacing */
-        margin-bottom: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px; /* Equal gap between cards */
+        padding: 0 30px;
+        margin-bottom: 50px;
     }
+
     .card {
-        border: none; /* Remove default border */
-        border-radius: 10px; /* Rounded corners */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        transition: transform 0.2s; /* Smooth hover effect */
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-color: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out;
     }
+
     .card:hover {
-        transform: scale(1.05); /* Scale effect on hover */
+        transform: translateY(-5px);
     }
+
     .card-img-top {
-        border-top-left-radius: 10px; /* Rounded corners for image */
-        border-top-right-radius: 10px; /* Rounded corners for image */
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
     }
+
     .card-body {
-        background-color: #f8f9fa; /* Light background for card body */
-        border-radius: 0 0 10px 10px; /* Rounded corners for card body */
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        background-color: #f9f9f9;
     }
+
     .card-text {
-        margin: 5px 0; /* Consistent margin for text */
+        margin: 5px 0;
+        color: #333;
     }
+
     .bold-text {
-        font-weight: bold; /* Class for bold text */
+        font-weight: 600;
+        color: #111;
     }
 </style>
 <h1>CURRENT CR'S</h1>

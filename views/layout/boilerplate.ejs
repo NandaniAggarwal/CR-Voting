@@ -68,6 +68,7 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      padding-bottom: 80px;
         }
         @keyframes gradient {
       0% {background-position: 0% 50%;}
@@ -137,35 +138,46 @@
         .footer span {
             color: #ffffff;
         }
+        .navbar-nav .nav-link:hover {
+    color: #ffeb3b !important;
+    transform: scale(1.05);
+  }
+
+  .footer span {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
     </style>
 </head>
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary shadow" style="background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../">CR Voting System</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" href="/">Home</a>
-                    <a class="nav-link" href="../login">Login</a>
-                    <a class="nav-link" href="../register">Register</a>
-                </div>
+          <a class="navbar-brand fw-bold" href="../" style="font-size: 1.5rem;">CR Voting System</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" href="/" style="color: white; transition: 0.3s;">Home</a>
+              <a class="nav-link" href="../login" style="color: white; transition: 0.3s;">Login</a>
+              <a class="nav-link" href="../register" style="color: white; transition: 0.3s;">Register</a>
             </div>
+          </div>
         </div>
-    </nav>
+      </nav>
+      
 
     <main class="container mt-5">
         <%- include('../partials/flash') %>
         <%- body %>
     </main>
 
-    <footer class="footer mt-auto py-3">
+    <footer class="footer mt-auto py-3 bg-dark text-white shadow" style="background: linear-gradient(to right, #141e30, #243b55); position: fixed; bottom: 0; width: 100%;">
         <div class="container text-center">
-            <span>&copy; CR Voting System</span>
+          <span>&copy; CR Voting System</span>
         </div>
-    </footer>
+      </footer>
+      
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-..." crossorigin="anonymous"></script>

@@ -11,7 +11,7 @@
   <% let isTop = cand.votes === maxVotes; %>
   <% let barClass = isTop ? 'bg-success' : 'bg-warning'; %>
   <span style="font-weight: bold; color: rgb(235, 176, 210); vertical-align: middle; line-height: 5em; margin-left: 10px;">
-    <%= cand.name %> - <%= Math.round(percent) %>%
+    <%= cand.name %> <%= isTop ? " 🏆" : "" %> - <%= Math.round(percent) %>%
   </span>
 
   <div class="progress" style="margin-bottom: 30px; width: 100%; height: 5em;">

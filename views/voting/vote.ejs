@@ -9,7 +9,7 @@
     <div class="carousel-inner">
       <% cand.images.forEach((img,i)=>{ %>
         <div class="carousel-item <%= i===0 ? 'active':'' %>">
-        <img class="d-block w-100" src="<%=img.url%>" alt="...">
+        <img class="d-block w-100" src="<%=img.url%>" alt="..." style="height: 200px; object-fit: cover;">
         </div>
       <% }) %>
     </div>
